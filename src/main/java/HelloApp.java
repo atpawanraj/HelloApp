@@ -6,20 +6,15 @@ public class HelloApp {
 
         if (args.length > 0) {
 
-            StringBuilder builder = new StringBuilder();
-            boolean first = true;
+            StringBuilder nameBuilder = new StringBuilder();
 
             for (String name : args) {
-
-                if (!first) {
-                    builder.append(", ");
-                }
-
-                builder.append(name);
-                first = false;
+                nameBuilder.append(name).append(", ");
             }
 
-            names = builder.toString();
+            if (nameBuilder.length() > 0) {
+                names = nameBuilder.substring(0, nameBuilder.length() - 2);
+            }
         }
 
         System.out.println("Hello, " + names + "!");
